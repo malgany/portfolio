@@ -53,6 +53,7 @@ a:hover {
 
 .box-shadow, .card-blog, .work-box, .service-box, .paralax-mf {
   box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+  background-color: #1d2226;
 }
 
 .box-shadow-a, .button:hover {
@@ -92,7 +93,7 @@ a:hover {
 }
 
 .overlay-mf {
-  background-color: #000000a8;
+  background-color: #00000000;
 }
 
 .overlay-mf {
@@ -1132,7 +1133,7 @@ a:hover {
   margin-top: 0.6rem;
 }
 .card-blog .card-description {
-  color: #4e4e4e;
+  color: #ffffff;
 }
 .card-blog .post-author {
   display: inline-block;
@@ -1277,6 +1278,49 @@ a:hover {
   color: #fff;
 }
 
+.profile-image {
+  background-image: url("../img/profile.jpg");
+  background-repeat: no-repeat, repeat;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+}
+
+.icon-php {
+  background-image: url("../img/icon-php.png");
+  background-repeat: no-repeat, repeat;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  margin-bottom: 50px;
+}
+
+.icon-laravel {
+  background-image: url("../img/icon-laravel.png");
+  background-repeat: no-repeat, repeat;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  margin-bottom: 50px;
+}
+
+.icon-js {
+  background-image: url("../img/icon-js.png");
+  background-repeat: no-repeat, repeat;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  margin-bottom: 50px;
+}
+
+.icon-node {
+  background-image: url("../img/icon-node.png");
+  background-repeat: no-repeat, repeat;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  margin-bottom: 50px;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
