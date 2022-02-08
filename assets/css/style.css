@@ -213,6 +213,7 @@ a:hover {
 .socials .ico-circle {
   height: 40px;
   width: 40px;
+  padding-top: 4px;
   font-size: 1.2rem;
   border-radius: 50%;
   line-height: 1.6;
@@ -1320,6 +1321,23 @@ a:hover {
   width: 150px;
   background-size: cover;
   margin-bottom: 50px;
+}
+
+button {
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 3px 6px;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #ff014f;
+  color: #cde1f8;
 }
 /*--------------------------------------------------------------
 # Footer
