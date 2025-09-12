@@ -1,14 +1,14 @@
       // Dados dos repositórios (JSON como objeto JS)
       const repos = [
-        { title: 'malgany', description: 'Config files for my GitHub profile.', topics: ['config','github-config'], language: '', updated: 'Updated 4 hours ago' },
-        { title: 'lista-vagas', description: 'Listagem de vagas', topics: [], language: 'JavaScript', updated: 'Updated last week' },
-        { title: 'cruzada', description: 'Game de cruzadinha.', topics: [], language: 'JavaScript', updated: 'Updated 3 weeks ago' },
-        { title: 'tabuleiro', description: 'Game de tabuleiro.', topics: [], language: 'JavaScript', updated: 'Updated 3 weeks ago' },
-        { title: 'operiodico', description: 'O Periódico', topics: [], language: 'HTML', updated: 'Updated on May 12' },
-        { title: 'android-standard-model', description: 'Android Standard Model', topics: [], language: 'HTML', updated: 'Updated on Mar 24' },
-        { title: 'pwa-cartoon', description: 'PWA criado com HTML, CSS e JavaScript usando Material Design.', topics: [], language: 'JavaScript', updated: 'Updated on Mar 15' },
-        { title: 'api-cartoon', description: 'API simples em Node.js para o app SnapToon (transforma imagens em cartoon).', topics: [], language: 'JavaScript', updated: 'Updated on Mar 15' },
-        { title: 'tanktank', description: 'Jogo web “TankTank” (GitHub Pages).', topics: [], language: 'JavaScript', updated: 'Updated on Mar 9' },
+        { title: 'malgany', description: 'Config files for my GitHub profile.', topics: ['config','github-config'], language: '', updated: 'Updated on Sep 12, 2025' },
+        { title: 'lista-vagas', description: 'Listagem de vagas', topics: [], language: 'JavaScript', updated: 'Updated on Sep 5, 2025' },
+        { title: 'cruzada', description: 'Game de cruzadinha.', topics: [], language: 'JavaScript', updated: 'Updated on Aug 22, 2025' },
+        { title: 'tabuleiro', description: 'Game de tabuleiro.', topics: [], language: 'JavaScript', updated: 'Updated on Aug 22, 2025' },
+        { title: 'operiodico', description: 'O Periódico', topics: [], language: 'HTML', updated: 'Updated on May 12, 2025' },
+        { title: 'android-standard-model', description: 'Android Standard Model', topics: [], language: 'HTML', updated: 'Updated on Mar 24, 2025' },
+        { title: 'pwa-cartoon', description: 'PWA criado com HTML, CSS e JavaScript usando Material Design.', topics: [], language: 'JavaScript', updated: 'Updated on Mar 15, 2025' },
+        { title: 'api-cartoon', description: 'API simples em Node.js para o app SnapToon (transforma imagens em cartoon).', topics: [], language: 'JavaScript', updated: 'Updated on Mar 15, 2025' },
+        { title: 'tanktank', description: 'Jogo web “TankTank” (GitHub Pages).', topics: [], language: 'JavaScript', updated: 'Updated on Mar 9, 2025' },
         { title: 'PHPChain', description: 'Implementa o padrão Chain of Responsibility em PHP.', topics: [], language: 'PHP', updated: 'Updated on Apr 25, 2024' },
         { title: 'sum20', description: 'A numbers game', topics: [], language: 'JavaScript', updated: 'Updated on Mar 21, 2024' },
         { title: 'aitools', description: 'Coleção de ferramentas simples de IA em HTML.', topics: [], language: 'HTML', updated: 'Updated on Mar 21, 2024' },
@@ -44,7 +44,8 @@
 
         if (repo.language) {
           const badge = document.createElement('span');
-          badge.className = 'badge';
+          const langClass = `badge-${repo.language.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+          badge.className = `badge ${langClass}`;
           badge.textContent = repo.language;
           card.appendChild(badge);
         }
