@@ -54,6 +54,20 @@
           btn.setAttribute('aria-pressed', 'true');
           btn.addEventListener('click', () => {
             const pressed = btn.getAttribute('aria-pressed') === 'true';
+
+            // Quando todos os filtros estão ativos e o filtro clicado está marcado,
+            // mantém somente o filtro clicado ativo.
+            if (activeFilters.size === allLangs.length && pressed) {
+              activeFilters.clear();
+              activeFilters.add(lang);
+              document
+                .querySelectorAll('#filters .lang-filter')
+                .forEach(b => b.setAttribute('aria-pressed', 'false'));
+              btn.setAttribute('aria-pressed', 'true');
+              renderGrid();
+              return;
+            }
+
             btn.setAttribute('aria-pressed', String(!pressed));
             if (pressed) activeFilters.delete(lang); else activeFilters.add(lang);
             renderGrid();
