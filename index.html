@@ -40,12 +40,12 @@
     <main class="container" role="main">
       <section>
         <div class="tabs" role="tablist">
-          <button class="tab active" data-tab="repos" aria-selected="true">Meu GitHub</button>
+          <button class="tab active" data-tab="work" aria-selected="true">Onde já trabalhei</button>
           <button class="tab" data-tab="certs" aria-selected="false">Cursos e certificados</button>
-          <button class="tab" data-tab="work" aria-selected="false">Onde já trabalhei</button>
+          <button class="tab" data-tab="repos" aria-selected="false">Meu GitHub</button>
         </div>
 
-        <div id="tab-repos" class="tab-panel">
+        <div id="tab-repos" class="tab-panel" hidden>
           <div id="filters" class="filters" role="group" aria-label="Filtrar por linguagem"></div>
           <div id="grid" class="grid" aria-live="polite"></div>
         </div>
@@ -54,7 +54,7 @@
           <div id="certGrid" class="grid"></div>
         </div>
 
-        <div id="tab-work" class="tab-panel" hidden></div>
+        <div id="tab-work" class="tab-panel"></div>
       </section>
     </main>
 
