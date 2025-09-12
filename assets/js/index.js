@@ -43,12 +43,12 @@ const repos = [
         { title: 'INTELIGÊNCIA ARTIFICIAL COM JAVASCRIPT E TENSORFLOW.JS', provider: 'Udemy', issued: 'ago de 2022', credential: 'UC-a8de6968-c618-4004-a0d7-ed3315c2c12a', link: 'https://www.udemy.com/certificate/UC-a8de6968-c618-4004-a0d7-ed3315c2c12a/' },
         { title: 'AVANÇANDO COM ORIENTAÇÃO A OBJETOS COM PHP: HERANÇA, POLIMORFISMO E INTERFACES', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/596efb99-a295-4119-8728-9f8bd31e849d' },
         { title: 'DESIGN PATTERNS EM PHP: PADRÕES COMPORTAMENTAIS', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/a49bbe0f-ada6-424b-b1cc-a1c3194d52c3', competencies: ['design patterns'] },
-        { title: 'ORIENTAÇÃO A OBJETOS COM PHP: CLASSES, MÉTODOS E ATRIBUTOS', provider: 'Alura', issued: 'fev de 2022' },
+        { title: 'ORIENTAÇÃO A OBJETOS COM PHP: CLASSES, MÉTODOS E ATRIBUTOS', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/8113d81e-7551-4df2-bcd4-99cde4c75e06' },
         { title: 'PHP E CLEAN ARCHITECTURE: DESCOMPLICANDO ARQUITETURA DE SOFTWARE', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/3dbeaa2c-3737-482b-bafd-24fcabc18930' },
         { title: 'SYMFONY PARTE 1: CRIAÇÃO DE UMA API RESTFUL', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/5a9de20f-c2f6-4e36-bb6d-8ca5ca17a3ac' },
         { title: 'TESTES UNITÁRIOS E TDD COM PHP E PHPUNIT', provider: 'Udemy', issued: 'fev de 2022', link: 'https://www.udemy.com/certificate/UC-bc16db34-a760-4b4f-9b3e-564d4ad9d344/', competencies: ['Unit Testing'] },
         { title: 'GESTÃO DE PROJETOS', provider: 'Fundação Getulio Vargas', issued: 'ago de 2021', link: 'https://www.brasilopenbadge.com.br/pages/badge/b2af3a338e2ac3f0b4660943b79a49fa' },
-        { title: 'HOME OFFICE PARA GESTORES', provider: 'Udemy', issued: 'mai de 2020' },
+        { title: 'HOME OFFICE PARA INICIANTES E GESTORES', provider: 'Udemy', issued: 'mai de 2020', link: 'https://www.udemy.com/certificate/UC-8c669cd1-2905-4928-9a3c-954e917a2c7f/' },
         { title: 'DALE CARNEGIE', provider: 'Dale Carnegie Training', issued: 'jan de 2019' }
       ];
 
