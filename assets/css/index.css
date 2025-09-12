@@ -134,7 +134,7 @@
       }
 
       .badge-html { background: #e34c26; color: #ffffff; }
-      .badge-javascript { background: #f7df1e; color: #ffffff; }
+      .badge-javascript { background: #f7df1e; color: #000000; }
       .badge-css { background: #264de4; color: #ffffff; }
       .badge-php { background: #777bb3; color: #000000; }
       .badge-java { background: #d32f2f; color: #ffffff; }
