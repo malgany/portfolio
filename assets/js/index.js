@@ -35,8 +35,34 @@
         { title: 'Varios-Projetos', description: 'Repositório de projetos acadêmicos.', topics: [], language: 'Java', updated: 'Updated on Dec 20, 2015' }
       ];
 
-      // Renderização dos cards
+      // Renderização dos cards e filtros
       const grid = document.getElementById('grid');
+      const filtersDiv = document.getElementById('filters');
+
+      const order = ['PHP','JavaScript','HTML','CSS','Java'];
+      const allLangs = [...new Set(repos.filter(r => r.language).map(r => r.language))].sort((a,b) => a.localeCompare(b));
+      let activeFilters = new Set(allLangs);
+
+      function createFilters() {
+        filtersDiv.innerHTML = '';
+        allLangs.forEach(lang => {
+          const btn = document.createElement('button');
+          const langClass = `badge-${lang.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+          btn.className = `lang-filter ${langClass}`;
+          btn.type = 'button';
+          btn.textContent = lang;
+          btn.dataset.lang = lang;
+          btn.setAttribute('aria-pressed', 'true');
+          btn.addEventListener('click', () => {
+            const pressed = btn.getAttribute('aria-pressed') === 'true';
+            btn.setAttribute('aria-pressed', String(!pressed));
+            if (pressed) activeFilters.delete(lang); else activeFilters.add(lang);
+            renderGrid();
+          });
+          filtersDiv.appendChild(btn);
+        });
+      }
+
       function createCard(repo) {
         const card = document.createElement('article');
         card.className = 'card';
@@ -85,7 +111,14 @@
 
       function renderGrid() {
         grid.innerHTML = '';
-        repos.forEach(r => grid.appendChild(createCard(r)));
+        repos
+          .filter(r => r.language && activeFilters.has(r.language))
+          .sort((a, b) => {
+            const ai = order.indexOf(a.language);
+            const bi = order.indexOf(b.language);
+            return (ai === -1 ? order.length : ai) - (bi === -1 ? order.length : bi);
+          })
+          .forEach(r => grid.appendChild(createCard(r)));
       }
 
       // Tema: salva preferência e tenta detectar do sistema apenas na primeira visita
@@ -124,6 +157,7 @@
       });
 
       // Start
+      createFilters();
       initTheme();
       renderGrid();
 
