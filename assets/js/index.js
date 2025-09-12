@@ -47,8 +47,7 @@
         filtersDiv.innerHTML = '';
         allLangs.forEach(lang => {
           const btn = document.createElement('button');
-          const langClass = `badge-${lang.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-          btn.className = `lang-filter ${langClass}`;
+          btn.className = 'lang-filter';
           btn.type = 'button';
           btn.textContent = lang;
           btn.dataset.lang = lang;
