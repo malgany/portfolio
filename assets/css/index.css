@@ -70,6 +70,9 @@
       .contact a {
         color: var(--fg);
         text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
       }
       .contact a:hover { text-decoration: underline; }
 
@@ -99,6 +102,25 @@
       @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
       @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
       @media (min-width: 1200px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .lang-filter {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .2px;
+        cursor: pointer;
+      }
+      .lang-filter[aria-pressed="false"] { opacity: 0.4; }
 
       .card {
         position: relative;
