@@ -52,6 +52,64 @@ const repos = [
         { title: 'DALE CARNEGIE', provider: 'Dale Carnegie Training', issued: 'jan de 2019' }
       ];
 
+      const jobs = [
+        {
+          year: '2023',
+          company: 'EBANX (via Objective)',
+          title: 'Software Engineer Golang',
+          period: 'abr/2023 - presente (~1 ano 6 meses)',
+          bullets: [
+            'Desenvolvimento de APIs REST para integração entre sistemas internos',
+            'Novo fluxo de cobrança de ponta a ponta, incluindo geração de CNAB',
+            'Monitoramento financeiro para validar e corrigir inconsistências',
+            'Observabilidade com métricas, logs estruturados e tracing (Grafana, CloudWatch)'
+          ]
+        },
+        {
+          year: '2022',
+          company: 'EBANX (via Objective)',
+          title: 'Software Engineer PHP',
+          period: 'mar/2022 - mar/2023 (1 ano 1 mês)',
+          bullets: [
+            'Implementação de novo fluxo de conciliação e cálculo de novas taxas',
+            'Filas para consumo de snapshots e processamento assíncrono',
+            'Aumento da cobertura de testes e esteiras CI/CD com validações automáticas',
+            'Observabilidade com métricas, logs estruturados e tracing (Grafana, CloudWatch)'
+          ]
+        },
+        {
+          year: '2017',
+          company: 'Before TI',
+          title: 'Team Lead',
+          period: 'nov/2017 - fev/2022 (4 anos 4 meses)',
+          bullets: [
+            'Liderança de equipe: metas, acompanhamento e feedbacks',
+            'Recrutamento, onboarding e desenvolvimento de colaboradores (1:1s, PDIs)',
+            'Planejamento de Sprints (Scrum) e gestão do fluxo Kanban'
+          ]
+        },
+        {
+          year: '2014',
+          company: 'Before TI',
+          title: 'Software Development Engineer',
+          period: 'out/2014 - out/2017 (3 anos 1 mês)',
+          bullets: [
+            'Implementação de novas tecnologias com código limpo',
+            'Refatoração contínua para melhorar desempenho e reduzir manutenções'
+          ]
+        },
+        {
+          year: '2010',
+          company: 'NDS Brasil Soluções Tecnológicas',
+          title: 'Software Development Engineer',
+          period: 'ago/2010 - out/2014 (4 anos 3 meses)',
+          bullets: [
+            'Desenvolvimento e manutenção de sistemas em PHP e MySQL',
+            'Uso de Microsoft SQL Server'
+          ]
+        }
+      ];
+
       // Renderização dos cards e filtros
       const grid = document.getElementById('grid');
       const filtersDiv = document.getElementById('filters');
@@ -142,6 +200,48 @@ const repos = [
       function renderCerts() {
         certGrid.innerHTML = '';
         certs.forEach(c => certGrid.appendChild(createCertCard(c)));
+      }
+
+      function createJobItem(job) {
+        const item = document.createElement('div');
+        item.className = 'timeline-item';
+
+        const year = document.createElement('span');
+        year.className = 'timeline-year';
+        year.textContent = job.year;
+        item.appendChild(year);
+
+        const content = document.createElement('div');
+        content.className = 'timeline-content';
+
+        const title = document.createElement('h3');
+        title.textContent = `${job.company} — ${job.title}`;
+        content.appendChild(title);
+
+        const period = document.createElement('div');
+        period.className = 'meta';
+        period.textContent = job.period;
+        content.appendChild(period);
+
+        const ul = document.createElement('ul');
+        job.bullets.forEach(b => {
+          const li = document.createElement('li');
+          li.textContent = b;
+          ul.appendChild(li);
+        });
+        content.appendChild(ul);
+
+        item.appendChild(content);
+        return item;
+      }
+
+      function renderJobs() {
+        const panel = document.getElementById('tab-work');
+        panel.innerHTML = '';
+        const timeline = document.createElement('div');
+        timeline.className = 'timeline';
+        jobs.forEach(job => timeline.appendChild(createJobItem(job)));
+        panel.appendChild(timeline);
       }
 
       function createCard(repo) {
@@ -260,4 +360,5 @@ const repos = [
       initTheme();
       renderGrid();
       renderCerts();
+      renderJobs();
 
