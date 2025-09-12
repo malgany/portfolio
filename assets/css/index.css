@@ -120,6 +120,8 @@
         background: var(--card);
         border-bottom-color: #007bff;
       }
+      .tab:not(.active) { opacity: 0.5; }
+      .tab:not(.active):hover { opacity: 0.8; }
       .tab-panel[hidden] { display: none; }
 
       .grid {
