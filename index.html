@@ -39,8 +39,22 @@
 
     <main class="container" role="main">
       <section>
-        <div id="filters" class="filters" role="group" aria-label="Filtrar por linguagem"></div>
-        <div id="grid" class="grid" aria-live="polite"></div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="repos" aria-selected="true">Meu GitHub</button>
+          <button class="tab" data-tab="certs" aria-selected="false">Cursos e certificados</button>
+          <button class="tab" data-tab="work" aria-selected="false">Onde já trabalhei</button>
+        </div>
+
+        <div id="tab-repos" class="tab-panel">
+          <div id="filters" class="filters" role="group" aria-label="Filtrar por linguagem"></div>
+          <div id="grid" class="grid" aria-live="polite"></div>
+        </div>
+
+        <div id="tab-certs" class="tab-panel" hidden>
+          <div id="certGrid" class="grid"></div>
+        </div>
+
+        <div id="tab-work" class="tab-panel" hidden></div>
       </section>
     </main>
 

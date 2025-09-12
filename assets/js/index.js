@@ -1,5 +1,5 @@
       // Dados dos repositórios (JSON como objeto JS)
-      const repos = [
+const repos = [
         { title: 'malgany', description: 'Arquivos de configuração para personalizar meu perfil no GitHub.', topics: ['config','github-config'], language: '', updated: 'Updated on Sep 12, 2025' },
         { title: 'lista-vagas', description: 'Aplicação em JavaScript para listar vagas de emprego.', topics: [], language: 'JavaScript', updated: 'Updated on Sep 5, 2025' },
         { title: 'cruzada', description: 'Jogo de palavras cruzadas em JavaScript.', topics: [], language: 'JavaScript', updated: 'Updated on Aug 22, 2025' },
@@ -32,12 +32,30 @@
         { title: 'Compilador-8-semestre-CC', description: 'Trabalhos acadêmicos de Ciência da Computação do 8º semestre com código em PHP.', topics: [], language: 'PHP', updated: 'Updated on Feb 7, 2022' },
         { title: 'ionic-appet', description: 'Aplicativo de exemplo desenvolvido em JavaScript com o framework Ionic.', topics: [], language: 'JavaScript', updated: 'Updated on Feb 11, 2017' },
         { title: 'appet', description: 'Aplicação para animais com funcionalidades de venda, doação e procura, construída com HTML, CSS e JavaScript.', topics: [], language: 'CSS', updated: 'Updated on Oct 25, 2016' },
-        { title: 'Varios-Projetos', description: 'Repositório de projetos acadêmicos em Java.', topics: [], language: 'Java', updated: 'Updated on Dec 20, 2015' }
+      { title: 'Varios-Projetos', description: 'Repositório de projetos acadêmicos em Java.', topics: [], language: 'Java', updated: 'Updated on Dec 20, 2015' }
+      ];
+
+      const certs = [
+        { title: 'ENTREGA CONTÍNUA: CONFIABILIDADE E QUALIDADE NA IMPLANTAÇÃO DE SOFTWARE', provider: 'Alura', issued: 'mar de 2023', competencies: ['Continuous Delivery'] },
+        { title: 'INTEGRAÇÃO CONTÍNUA: MAIS QUALIDADE E MENOS RISCO NO DESENVOLVIMENTO', provider: 'Alura', issued: 'mar de 2023', competencies: ['Continuous Integration'] },
+        { title: 'MICROSSERVIÇOS: EXPLORANDO OS CONCEITOS', provider: 'Alura', issued: 'mar de 2023', competencies: ['Message Broker'] },
+        { title: 'MICROSSERVIÇOS: PADRÕES DE PROJETO', provider: 'Alura', issued: 'mar de 2023', competencies: ['Microsservice'] },
+        { title: 'INTELIGÊNCIA ARTIFICIAL COM JAVASCRIPT E TENSORFLOW.JS', provider: 'Udemy', issued: 'ago de 2022', credential: 'UC-a8de6968-c618-4004-a0d7-ed3315c2c12a' },
+        { title: 'AVANÇANDO COM ORIENTAÇÃO A OBJETOS COM PHP: HERANÇA, POLIMORFISMO E INTERFACES', provider: 'Alura', issued: 'fev de 2022' },
+        { title: 'DESIGN PATTERNS EM PHP: PADRÕES COMPORTAMENTAIS', provider: 'Alura', issued: 'fev de 2022', competencies: ['design patterns'] },
+        { title: 'ORIENTAÇÃO A OBJETOS COM PHP: CLASSES, MÉTODOS E ATRIBUTOS', provider: 'Alura', issued: 'fev de 2022' },
+        { title: 'PHP E CLEAN ARCHITECTURE: DESCOMPLICANDO ARQUITETURA DE SOFTWARE', provider: 'Alura', issued: 'fev de 2022' },
+        { title: 'SYMFONY PARTE 1: CRIAÇÃO DE UMA API RESTFUL', provider: 'Alura', issued: 'fev de 2022' },
+        { title: 'TESTES UNITÁRIOS E TDD COM PHP E PHPUNIT', provider: 'Udemy', issued: 'fev de 2022', competencies: ['Unit Testing'] },
+        { title: 'GESTÃO DE PROJETOS', provider: 'Fundação Getulio Vargas', issued: 'ago de 2021' },
+        { title: 'HOME OFFICE PARA GESTORES', provider: 'Udemy', issued: 'mai de 2020' },
+        { title: 'DALE CARNEGIE', provider: 'Dale Carnegie Training', issued: 'jan de 2019' }
       ];
 
       // Renderização dos cards e filtros
       const grid = document.getElementById('grid');
       const filtersDiv = document.getElementById('filters');
+      const certGrid = document.getElementById('certGrid');
 
       const order = ['PHP','JavaScript','HTML','CSS','Java'];
       const allLangs = [...new Set(repos.filter(r => r.language).map(r => r.language))].sort((a,b) => a.localeCompare(b));
@@ -74,6 +92,51 @@
           });
           filtersDiv.appendChild(btn);
         });
+      }
+
+      function createCertCard(cert) {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const title = document.createElement('h3');
+        title.textContent = cert.title;
+        card.appendChild(title);
+
+        const provider = document.createElement('p');
+        provider.className = 'desc';
+        provider.textContent = cert.provider;
+        card.appendChild(provider);
+
+        const issued = document.createElement('div');
+        issued.className = 'meta';
+        issued.textContent = `Emitido em ${cert.issued}`;
+        card.appendChild(issued);
+
+        if (cert.credential) {
+          const cred = document.createElement('div');
+          cred.className = 'meta';
+          cred.textContent = `Código: ${cert.credential}`;
+          card.appendChild(cred);
+        }
+
+        if (Array.isArray(cert.competencies) && cert.competencies.length) {
+          const chips = document.createElement('div');
+          chips.className = 'chips';
+          cert.competencies.forEach(c => {
+            const chip = document.createElement('span');
+            chip.className = 'chip';
+            chip.textContent = c;
+            chips.appendChild(chip);
+          });
+          card.appendChild(chips);
+        }
+
+        return card;
+      }
+
+      function renderCerts() {
+        certGrid.innerHTML = '';
+        certs.forEach(c => certGrid.appendChild(createCertCard(c)));
       }
 
       function createCard(repo) {
@@ -142,6 +205,8 @@
       const toggleBtn = document.getElementById('toggleTheme');
       const iconSun = document.getElementById('iconSun');
       const iconMoon = document.getElementById('iconMoon');
+      const tabs = document.querySelectorAll('.tab');
+      const panels = document.querySelectorAll('.tab-panel');
 
       function setTheme(theme) {
         const t = theme === 'dark' ? 'dark' : 'light';
@@ -172,8 +237,22 @@
         setTheme(current === 'dark' ? 'light' : 'dark');
       });
 
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          panels.forEach(p => p.hidden = true);
+          document.getElementById(`tab-${tab.dataset.tab}`).hidden = false;
+        });
+      });
+
       // Start
       createFilters();
       initTheme();
       renderGrid();
+      renderCerts();
 
