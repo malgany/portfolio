@@ -94,6 +94,32 @@
       /* Main */
       .container { max-width: 1200px; margin: 24px auto; padding: 0 20px 60px; }
 
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .tab {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        color: var(--fg);
+        border-radius: 6px 6px 0 0;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: .2px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .tab.active {
+        background: var(--card);
+        border-bottom-color: var(--card);
+      }
+      .tab-panel[hidden] { display: none; }
+
       .grid {
         display: grid;
         gap: 16px;
