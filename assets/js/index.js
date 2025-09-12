@@ -36,18 +36,18 @@ const repos = [
       ];
 
       const certs = [
-        { title: 'ENTREGA CONTÍNUA: CONFIABILIDADE E QUALIDADE NA IMPLANTAÇÃO DE SOFTWARE', provider: 'Alura', issued: 'mar de 2023', competencies: ['Continuous Delivery'] },
-        { title: 'INTEGRAÇÃO CONTÍNUA: MAIS QUALIDADE E MENOS RISCO NO DESENVOLVIMENTO', provider: 'Alura', issued: 'mar de 2023', competencies: ['Continuous Integration'] },
-        { title: 'MICROSSERVIÇOS: EXPLORANDO OS CONCEITOS', provider: 'Alura', issued: 'mar de 2023', competencies: ['Message Broker'] },
-        { title: 'MICROSSERVIÇOS: PADRÕES DE PROJETO', provider: 'Alura', issued: 'mar de 2023', competencies: ['Microsservice'] },
-        { title: 'INTELIGÊNCIA ARTIFICIAL COM JAVASCRIPT E TENSORFLOW.JS', provider: 'Udemy', issued: 'ago de 2022', credential: 'UC-a8de6968-c618-4004-a0d7-ed3315c2c12a' },
-        { title: 'AVANÇANDO COM ORIENTAÇÃO A OBJETOS COM PHP: HERANÇA, POLIMORFISMO E INTERFACES', provider: 'Alura', issued: 'fev de 2022' },
-        { title: 'DESIGN PATTERNS EM PHP: PADRÕES COMPORTAMENTAIS', provider: 'Alura', issued: 'fev de 2022', competencies: ['design patterns'] },
+        { title: 'ENTREGA CONTÍNUA: CONFIABILIDADE E QUALIDADE NA IMPLANTAÇÃO DE SOFTWARE', provider: 'Alura', issued: 'mar de 2023', link: 'https://cursos.alura.com.br/certificate/e1a2fbe0-c515-4ed4-8959-f2f64ce5fffb', competencies: ['Continuous Delivery'] },
+        { title: 'INTEGRAÇÃO CONTÍNUA: MAIS QUALIDADE E MENOS RISCO NO DESENVOLVIMENTO', provider: 'Alura', issued: 'mar de 2023', link: 'https://cursos.alura.com.br/certificate/b4baa7a8-d613-4158-8f75-7b0f4824e4d5', competencies: ['Continuous Integration'] },
+        { title: 'MICROSSERVIÇOS: EXPLORANDO OS CONCEITOS', provider: 'Alura', issued: 'mar de 2023', link: 'https://cursos.alura.com.br/certificate/dd5a58e0-3a5b-46d1-889e-e555d0da9b81', competencies: ['Message Broker'] },
+        { title: 'MICROSSERVIÇOS: PADRÕES DE PROJETO', provider: 'Alura', issued: 'mar de 2023', link: 'https://cursos.alura.com.br/certificate/ec0468dc-53e8-441f-beb3-d682e3a09ab4', competencies: ['Microsservice'] },
+        { title: 'INTELIGÊNCIA ARTIFICIAL COM JAVASCRIPT E TENSORFLOW.JS', provider: 'Udemy', issued: 'ago de 2022', credential: 'UC-a8de6968-c618-4004-a0d7-ed3315c2c12a', link: 'https://www.udemy.com/certificate/UC-a8de6968-c618-4004-a0d7-ed3315c2c12a/' },
+        { title: 'AVANÇANDO COM ORIENTAÇÃO A OBJETOS COM PHP: HERANÇA, POLIMORFISMO E INTERFACES', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/596efb99-a295-4119-8728-9f8bd31e849d' },
+        { title: 'DESIGN PATTERNS EM PHP: PADRÕES COMPORTAMENTAIS', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/a49bbe0f-ada6-424b-b1cc-a1c3194d52c3', competencies: ['design patterns'] },
         { title: 'ORIENTAÇÃO A OBJETOS COM PHP: CLASSES, MÉTODOS E ATRIBUTOS', provider: 'Alura', issued: 'fev de 2022' },
-        { title: 'PHP E CLEAN ARCHITECTURE: DESCOMPLICANDO ARQUITETURA DE SOFTWARE', provider: 'Alura', issued: 'fev de 2022' },
-        { title: 'SYMFONY PARTE 1: CRIAÇÃO DE UMA API RESTFUL', provider: 'Alura', issued: 'fev de 2022' },
-        { title: 'TESTES UNITÁRIOS E TDD COM PHP E PHPUNIT', provider: 'Udemy', issued: 'fev de 2022', competencies: ['Unit Testing'] },
-        { title: 'GESTÃO DE PROJETOS', provider: 'Fundação Getulio Vargas', issued: 'ago de 2021' },
+        { title: 'PHP E CLEAN ARCHITECTURE: DESCOMPLICANDO ARQUITETURA DE SOFTWARE', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/3dbeaa2c-3737-482b-bafd-24fcabc18930' },
+        { title: 'SYMFONY PARTE 1: CRIAÇÃO DE UMA API RESTFUL', provider: 'Alura', issued: 'fev de 2022', link: 'https://cursos.alura.com.br/certificate/5a9de20f-c2f6-4e36-bb6d-8ca5ca17a3ac' },
+        { title: 'TESTES UNITÁRIOS E TDD COM PHP E PHPUNIT', provider: 'Udemy', issued: 'fev de 2022', link: 'https://www.udemy.com/certificate/UC-bc16db34-a760-4b4f-9b3e-564d4ad9d344/', competencies: ['Unit Testing'] },
+        { title: 'GESTÃO DE PROJETOS', provider: 'Fundação Getulio Vargas', issued: 'ago de 2021', link: 'https://www.brasilopenbadge.com.br/pages/badge/b2af3a338e2ac3f0b4660943b79a49fa' },
         { title: 'HOME OFFICE PARA GESTORES', provider: 'Udemy', issued: 'mai de 2020' },
         { title: 'DALE CARNEGIE', provider: 'Dale Carnegie Training', issued: 'jan de 2019' }
       ];
@@ -95,8 +95,13 @@ const repos = [
       }
 
       function createCertCard(cert) {
-        const card = document.createElement('div');
+        const card = document.createElement(cert.link ? 'a' : 'div');
         card.className = 'card';
+        if (cert.link) {
+          card.href = cert.link;
+          card.target = '_blank';
+          card.rel = 'noopener noreferrer';
+        }
 
         const title = document.createElement('h3');
         title.textContent = cert.title;
