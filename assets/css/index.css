@@ -136,6 +136,8 @@
         flex-direction: column;
         gap: 10px;
         min-height: 160px;
+        text-decoration: none;
+        color: var(--fg);
       }
       .card h3 {
         margin: 0 0 2px 0;

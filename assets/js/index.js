@@ -77,9 +77,12 @@
       }
 
       function createCard(repo) {
-        const card = document.createElement('article');
+        const card = document.createElement('a');
         card.className = 'card';
         card.setAttribute('role', 'article');
+        card.href = "https://github.com/malgany/" + repo.title;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
 
         if (repo.language) {
           const badge = document.createElement('span');
