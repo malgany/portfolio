@@ -1,19 +1,19 @@
       // Dados dos repositórios (JSON como objeto JS)
 const repos = [
         { title: 'malgany', description: 'Arquivos de configuração para personalizar meu perfil no GitHub.', topics: ['config','github-config'], language: '', updated: 'Updated on Sep 12, 2025' },
-        { title: 'lista-vagas', description: 'Aplicação em JavaScript para listar vagas de emprego.', topics: [], language: 'JavaScript', updated: 'Updated on Sep 5, 2025' },
-        { title: 'cruzada', description: 'Jogo de palavras cruzadas em JavaScript.', topics: [], language: 'JavaScript', updated: 'Updated on Aug 22, 2025' },
-        { title: 'tabuleiro', description: 'Jogo de tabuleiro em JavaScript com interface HTML.', topics: [], language: 'JavaScript', updated: 'Updated on Aug 22, 2025' },
-        { title: 'operiodico', description: 'Site informativo do projeto O Periódico desenvolvido em HTML.', topics: [], language: 'HTML', updated: 'Updated on May 12, 2025' },
-        { title: 'android-standard-model', description: 'Modelo padrão para projetos Android com documentação em HTML.', topics: [], language: 'HTML', updated: 'Updated on Mar 24, 2025' },
-        { title: 'pwa-cartoon', description: 'Aplicativo progressivo que transforma imagens em cartoon, desenvolvido com HTML, CSS e JavaScript usando Material Design.', topics: [], language: 'JavaScript', updated: 'Updated on Mar 15, 2025' },
+        { title: 'lista-vagas', description: 'Aplicação em JavaScript para listar vagas de emprego.', topics: [], language: 'JavaScript', languages: ['JavaScript', 'CSS', 'HTML'], updated: 'Updated on Sep 5, 2025' },
+        { title: 'cruzada', description: 'Jogo de palavras cruzadas em JavaScript.', topics: [], language: 'JavaScript', languages: ['JavaScript', 'CSS'], updated: 'Updated on Aug 22, 2025' },
+        { title: 'tabuleiro', description: 'Jogo de tabuleiro em JavaScript com interface HTML.', topics: [], language: 'JavaScript', languages: ['JavaScript', 'CSS'], updated: 'Updated on Aug 22, 2025' },
+        { title: 'operiodico', description: 'Site informativo do projeto O Periódico desenvolvido em HTML.', topics: [], language: 'HTML', languages: ['HTML', 'CSS'], updated: 'Updated on May 12, 2025' },
+        { title: 'android-standard-model', description: 'Modelo padrão para projetos Android com documentação em HTML.', topics: [], language: 'HTML', languages: ['HTML', 'Java'], updated: 'Updated on Mar 24, 2025' },
+        { title: 'pwa-cartoon', description: 'Aplicativo progressivo que transforma imagens em cartoon, desenvolvido com HTML, CSS e JavaScript usando Material Design.', topics: [], language: 'JavaScript', languages: ['JavaScript', 'HTML', 'CSS'], updated: 'Updated on Mar 15, 2025' },
         { title: 'api-cartoon', description: 'API em Node.js para o aplicativo SnapToon que transforma imagens em cartoon.', topics: [], language: 'JavaScript', updated: 'Updated on Mar 15, 2025' },
         { title: 'tanktank', description: 'Jogo web TankTank em JavaScript publicado no GitHub Pages.', topics: [], language: 'JavaScript', updated: 'Updated on Mar 9, 2025' },
         { title: 'PHPChain', description: 'Biblioteca em PHP que implementa o padrão Chain of Responsibility.', topics: [], language: 'PHP', updated: 'Updated on Apr 25, 2024' },
-        { title: 'sum20', description: 'Jogo de números desenvolvido em JavaScript.', topics: [], language: 'JavaScript', updated: 'Updated on Mar 21, 2024' },
-        { title: 'aitools', description: 'Coleção de ferramentas simples de inteligência artificial desenvolvidas em HTML.', topics: [], language: 'HTML', updated: 'Updated on Mar 21, 2024' },
-        { title: 'frames', description: 'Experimentos com frames utilizando HTML.', topics: [], language: 'HTML', updated: 'Updated on Jul 19, 2023' },
-        { title: 'portfolio', description: 'Site de portfólio pessoal desenvolvido em HTML.', topics: ['website','portfolio','personal-website','personal-portfolio'], language: 'HTML', updated: 'Updated on Mar 21, 2023' },
+        { title: 'sum20', description: 'Jogo de números desenvolvido em JavaScript.', topics: [], language: 'JavaScript', languages: ['JavaScript', 'HTML', 'CSS'], updated: 'Updated on Mar 21, 2024' },
+        { title: 'aitools', description: 'Coleção de ferramentas simples de inteligência artificial desenvolvidas em HTML.', topics: [], language: 'HTML', languages: ['HTML', 'PHP', 'CSS'], updated: 'Updated on Mar 21, 2024' },
+        { title: 'frames', description: 'Experimentos com frames utilizando HTML.', topics: [], language: 'HTML', languages: ['HTML', 'JavaScript'], updated: 'Updated on Jul 19, 2023' },
+        { title: 'portfolio', description: 'Site de portfólio pessoal desenvolvido em HTML.', topics: ['website','portfolio','personal-website','personal-portfolio'], language: 'HTML', languages: ['HTML', 'CSS', 'JavaScript'], updated: 'Updated on Mar 21, 2023' },
         { title: 'gpt-calendar', description: 'Experimentos em JavaScript para integrar GPT ao Google Calendar.', topics: [], language: 'JavaScript', updated: 'Updated on Mar 13, 2023' },
         { title: 'uno-online', description: 'Fork do jogo UNO online desenvolvido em JavaScript.', topics: [], language: 'JavaScript', updated: 'Updated on Mar 12, 2023' },
         { title: 'a-estrela', description: 'Implementação do algoritmo A* em JavaScript.', topics: [], language: 'JavaScript', updated: 'Updated on Jul 27, 2022' },
@@ -24,15 +24,15 @@ const repos = [
         { title: 'estudos-de-git', description: 'Repositório de estudos sobre Git baseado em um fork.', topics: [], language: '', updated: 'Updated on Mar 17, 2022' },
         { title: 'ddd-laravel-model', description: 'Modelo DDD em PHP utilizando o framework Laravel.', topics: [], language: 'PHP', updated: 'Updated on Feb 28, 2022' },
         { title: 'PHPUnitProject', description: 'Exemplos de melhores práticas em testes unitários com PHP e PHPUnit.', topics: [], language: 'PHP', updated: 'Updated on Feb 13, 2022' },
-        { title: 'SymfonyRESTful', description: 'API RESTful desenvolvida em PHP com o framework Symfony.', topics: [], language: 'PHP', updated: 'Updated on Feb 9, 2022' },
-        { title: 'FlappyIA', description: 'Jogo estilo Flappy Bird em JavaScript com inteligência artificial usando Synaptic.js e Lodash.', topics: ['javascript','algorithm','ai','js','artificial-intelligence','ia'], language: 'JavaScript', updated: 'Updated on Feb 9, 2022' },
-        { title: 'Semaforo', description: 'Simulador de semáforo com calculadora de estados desenvolvido em HTML.', topics: ['js','semaforo'], language: 'HTML', updated: 'Updated on Feb 7, 2022' },
+        { title: 'SymfonyRESTful', description: 'API RESTful desenvolvida em PHP com o framework Symfony.', topics: [], language: 'PHP', languages: ['PHP', 'Shell'], updated: 'Updated on Feb 9, 2022' },
+        { title: 'FlappyIA', description: 'Jogo estilo Flappy Bird em JavaScript com inteligência artificial usando Synaptic.js e Lodash.', topics: ['javascript','algorithm','ai','js','artificial-intelligence','ia'], language: 'JavaScript', languages: ['JavaScript', 'HTML'], updated: 'Updated on Feb 9, 2022' },
+        { title: 'Semaforo', description: 'Simulador de semáforo com calculadora de estados desenvolvido em HTML.', topics: ['js','semaforo'], language: 'HTML', languages: ['HTML', 'JavaScript'], updated: 'Updated on Feb 7, 2022' },
         { title: 'api-classify-images', description: 'API em JavaScript que classifica imagens utilizando TensorFlow.js e Teachable Machine.', topics: ['nodejs','javascript','tensorflow','tensorflowjs','teachablemachine'], language: 'JavaScript', updated: 'Updated on Feb 7, 2022' },
         { title: 'random-cpf-php', description: 'Scripts PHP para geração e validação de números de CPF.', topics: [], language: 'PHP', updated: 'Updated on Feb 7, 2022' },
-        { title: 'Compilador-8-semestre-CC', description: 'Trabalhos acadêmicos de Ciência da Computação do 8º semestre com código em PHP.', topics: [], language: 'PHP', updated: 'Updated on Feb 7, 2022' },
-        { title: 'ionic-appet', description: 'Aplicativo de exemplo desenvolvido em JavaScript com o framework Ionic.', topics: [], language: 'JavaScript', updated: 'Updated on Feb 11, 2017' },
-        { title: 'appet', description: 'Aplicação para animais com funcionalidades de venda, doação e procura, construída com HTML, CSS e JavaScript.', topics: [], language: 'CSS', updated: 'Updated on Oct 25, 2016' },
-      { title: 'Varios-Projetos', description: 'Repositório de projetos acadêmicos em Java.', topics: [], language: 'Java', updated: 'Updated on Dec 20, 2015' }
+        { title: 'Compilador-8-semestre-CC', description: 'Trabalhos acadêmicos de Ciência da Computação do 8º semestre com código em PHP.', topics: [], language: 'PHP', languages: ['PHP', 'HTML'], updated: 'Updated on Feb 7, 2022' },
+        { title: 'ionic-appet', description: 'Aplicativo de exemplo desenvolvido em JavaScript com o framework Ionic.', topics: [], language: 'JavaScript', languages: ['JavaScript', 'CSS'], updated: 'Updated on Feb 11, 2017' },
+        { title: 'appet', description: 'Aplicação para animais com funcionalidades de venda, doação e procura, construída com HTML, CSS e JavaScript.', topics: [], language: 'CSS', languages: ['CSS', 'JavaScript', 'HTML'], updated: 'Updated on Oct 25, 2016' },
+      { title: 'Varios-Projetos', description: 'Repositório de projetos acadêmicos em Java.', topics: [], language: 'Java', languages: ['Java', 'HTML'], updated: 'Updated on Dec 20, 2015' }
       ];
 
       const certs = [
@@ -204,15 +204,22 @@ const repos = [
 
       function createJobItem(job) {
         const item = document.createElement('div');
-        item.className = 'timeline-item';
+        item.className = 'work-item';
 
-        const year = document.createElement('span');
-        year.className = 'timeline-year';
+        const year = document.createElement('div');
+        year.className = 'work-year';
         year.textContent = job.year;
         item.appendChild(year);
 
+        const rail = document.createElement('div');
+        rail.className = 'work-rail';
+        const dot = document.createElement('span');
+        dot.className = 'work-dot';
+        rail.appendChild(dot);
+        item.appendChild(rail);
+
         const content = document.createElement('div');
-        content.className = 'timeline-content';
+        content.className = 'work-content';
 
         const title = document.createElement('h3');
         title.textContent = `${job.company} — ${job.title}`;
@@ -239,7 +246,7 @@ const repos = [
         const panel = document.getElementById('tab-work');
         panel.innerHTML = '';
         const timeline = document.createElement('div');
-        timeline.className = 'timeline';
+        timeline.className = 'work-timeline';
         jobs.forEach(job => timeline.appendChild(createJobItem(job)));
         panel.appendChild(timeline);
       }
@@ -252,12 +259,19 @@ const repos = [
         card.target = "_blank";
         card.rel = "noopener noreferrer";
 
-        if (repo.language) {
-          const badge = document.createElement('span');
-          const langClass = `badge-${repo.language.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-          badge.className = `badge ${langClass}`;
-          badge.textContent = repo.language;
-          card.appendChild(badge);
+        // Badges de linguagem (múltiplas, sem sobreposição)
+        const langsToShow = Array.isArray(repo.languages) ? repo.languages : (repo.language ? [repo.language] : []);
+        if (langsToShow.length > 0) {
+          const badges = document.createElement('div');
+          badges.className = 'badges';
+          langsToShow.forEach(lang => {
+            const badge = document.createElement('span');
+            const langClass = `badge-${String(lang).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+            badge.className = `badge ${langClass}`;
+            badge.textContent = lang;
+            badges.appendChild(badge);
+          });
+          card.appendChild(badges);
         }
 
         const title = document.createElement('h3');
