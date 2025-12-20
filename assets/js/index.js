@@ -204,22 +204,15 @@ const repos = [
 
       function createJobItem(job) {
         const item = document.createElement('div');
-        item.className = 'work-item';
+        item.className = 'timeline-item';
 
         const year = document.createElement('div');
-        year.className = 'work-year';
+        year.className = 'timeline-year';
         year.textContent = job.year;
         item.appendChild(year);
 
-        const rail = document.createElement('div');
-        rail.className = 'work-rail';
-        const dot = document.createElement('span');
-        dot.className = 'work-dot';
-        rail.appendChild(dot);
-        item.appendChild(rail);
-
         const content = document.createElement('div');
-        content.className = 'work-content';
+        content.className = 'timeline-content';
 
         const title = document.createElement('h3');
         title.textContent = `${job.company} — ${job.title}`;
@@ -246,7 +239,7 @@ const repos = [
         const panel = document.getElementById('tab-work');
         panel.innerHTML = '';
         const timeline = document.createElement('div');
-        timeline.className = 'work-timeline';
+        timeline.className = 'timeline';
         jobs.forEach(job => timeline.appendChild(createJobItem(job)));
         panel.appendChild(timeline);
       }
